@@ -15,6 +15,7 @@ pipeline{
                              if [ $? -eq 0 ] ; then
                              echo "built successfully"
                              fi
+                             sudo chmod 777 /opt/jenkins/workspace/java-web-mvn-pipeline/target/*.war
                              cd ~
                              sudo scp -i Dec-devops-2021.pem /opt/jenkins/workspace/java-web-mvn-pipeline/target/*.war  ec2-user@172.31.5.125:/usr/share/tomcat/webapps/
                              '''
