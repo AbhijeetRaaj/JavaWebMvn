@@ -16,7 +16,7 @@ pipeline{
                              echo "built successfully"
                              fi
                              cd ~
-                             scp -i Dec-devops-2021.pem /opt/jenkins/workspace/java-web-mvn-pipeline/target/*.war  ec2-user@172.31.5.125:/usr/share/tomcat/webapps/
+                             sudo scp -i Dec-devops-2021.pem /opt/jenkins/workspace/java-web-mvn-pipeline/target/*.war  ec2-user@172.31.5.125:/usr/share/tomcat/webapps/
                              '''
                         }
                        }
@@ -30,7 +30,7 @@ pipeline{
                               echo " this is to test the .war file in tomcat server"
                               sudo service tomcat start
                               cd ~
-                              scp -i Dec-devops-2021.pem /opt/jenkins/workspace/java-web-mvn-pipeline/target/*.war ec2-user@172.31.23.172:/home/ec2-user/
+                              sudo scp -i Dec-devops-2021.pem /opt/jenkins/workspace/java-web-mvn-pipeline/target/*.war ec2-user@172.31.23.172:/home/ec2-user/
                             '''
                           }
                        }
