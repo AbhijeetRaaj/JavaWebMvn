@@ -1,10 +1,10 @@
 pipeline{
         stages{
             stage('BUILD'){
-                  steps{
                         agent {
                               label 'java-slave-2'
                               }
+                    steps{
                         sh "'
                              #!/bin/bash
                              echo " this is a web based maven build project"
