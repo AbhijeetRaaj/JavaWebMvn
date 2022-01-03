@@ -5,7 +5,7 @@ pipeline{
                               label 'java-slave-2'
                               }
                     steps{
-                        sh "'
+                            script{
                              #!/bin/bash
                              echo " this is a web based maven build project"
                              echo " this is built on java-slave-2 server"
@@ -15,7 +15,7 @@ pipeline{
                              echo "built successfully"
                              fi
                              scp -i Dec-devops-2021.pem /opt/jenkins/workspace/JavaWebMvn/target/JavaWeb.war  ec2-user@172.31.5.125:/usr/share/tomcat/webapps/
-                           '"
+                                     }
                         }
                        }
               stage('TEST'){
